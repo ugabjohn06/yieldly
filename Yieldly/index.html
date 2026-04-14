@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yieldy — Crop Disease Detection for Filipino Farmers</title>
+<link href="styles.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Yield<span>y</span><div class="nav-dot"></div></div>
+  <div class="nav-links">
+    <a href="#diseases">Diseases</a>
+    <a href="#how">How It Works</a>
+    <a href="#tech">Tech Stack</a>
+    <a href="#demo">Try Demo</a>
+    <a href="#demo" class="nav-cta">Check Your Crop →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Now Available for Eggplant Farmers</div>
+    <h1>Detect crop disease in <em>seconds.</em></h1>
+    <p class="hero-desc">Yieldy is a free mobile app for Filipino smallholder farmers. Just photograph your crop — our AI identifies diseases instantly and tells you exactly what to do, in Filipino or Bisaya.</p>
+    <div class="hero-actions">
+      <a href="#demo" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        Check My Crop
+      </a>
+      <a href="#how" class="btn-secondary">See How It Works</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <!-- floating badge left -->
+    <div class="badge-float left fade-up">
+      <div class="badge-icon green">🌿</div>
+      <div>
+        <div style="font-size:0.75rem;color:#888;font-weight:500;">Detection Accuracy</div>
+        <div style="font-size:0.9rem;color:#222;">EfficientNet-B0</div>
+      </div>
+    </div>
+
+    <!-- phone mockup -->
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-inner">
+        <div class="phone-statusbar">
+          <span>9:41</span>
+          <span>●●●</span>
+        </div>
+        <div class="phone-app">
+          <div class="app-topbar">
+            <div class="app-topbar-dot"></div>
+            <div class="app-topbar-title">Yieldy</div>
+          </div>
+          <div class="app-body">
+            <div style="font-size:11px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;">I-upload ang litrato ng tanim</div>
+            <div class="app-upload-zone">
+              <div class="app-upload-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              </div>
+              <div class="app-upload-text">I-tap para mag-upload<br/>o kumuha ng larawan</div>
+            </div>
+            <div class="app-result-card">
+              <div class="app-result-label">Resulta ng Pagsusuri</div>
+              <div class="app-result-title">Phomopsis Blight</div>
+              <div class="app-result-conf">
+                <div class="app-conf-bar"><div class="app-conf-fill"></div></div>
+                <div class="app-conf-val">87%</div>
+              </div>
+            </div>
+            <div style="font-size:10px;color:#555;line-height:1.5;">
+              <strong style="color:#333;">Gawin mo:</strong> Alisin ang mga apektadong dahon. Mag-spray ng copper-based fungicide.
+            </div>
+            <div class="app-action-btn">Tingnan ang Buong Rekomendasyon →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- floating badge right -->
+    <div class="badge-float right fade-up">
+      <div class="badge-icon yellow">⚡</div>
+      <div>
+        <div style="font-size:0.75rem;color:#888;font-weight:500;">Response time</div>
+        <div style="font-size:0.9rem;color:#222;">Under 3 seconds</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-num">5</div>
+    <div class="stat-label">Disease Classes Detected</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">&lt;3s</div>
+    <div class="stat-label">Diagnosis Time</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Free to Use</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Languages: Filipino & Bisaya</div>
+  </div>
+</div>
+
+<!-- DISEASES -->
+<section class="section" id="diseases">
+  <div class="section-tag">Detectable Diseases</div>
+  <h2>5 critical eggplant diseases,<br/>instantly identified.</h2>
+  <p class="section-sub">Our machine learning model is trained on the most common and devastating diseases affecting Philippine eggplant farmers.</p>
+  <div class="disease-grid">
+    <div class="disease-card">
+      <div class="disease-icon" style="background:#fde8e8;">🦠</div>
+      <div class="disease-name">Bacterial Wilt</div>
+      <div class="disease-cause">Ralstonia solanacearum</div>
+      <div class="disease-symptom">Sudden wilting of shoots and leaves, often irreversible without early intervention.</div>
+    </div>
+    <div class="disease-card">
+      <div class="disease-icon" style="background:#fff3e0;">🟤</div>
+      <div class="disease-name">Phomopsis Blight</div>
+      <div class="disease-cause">Phomopsis vexans</div>
+      <div class="disease-symptom">Fruit rot and stem lesions that spread rapidly under humid conditions.</div>
+    </div>
+    <div class="disease-card">
+      <div class="disease-icon" style="background:#e8f5e9;">🍃</div>
+      <div class="disease-name">Cercospora Leaf Spot</div>
+      <div class="disease-cause">Cercospora melongenae</div>
+      <div class="disease-symptom">Circular brown lesions on leaves that reduce photosynthesis and crop yield.</div>
+    </div>
+    <div class="disease-card">
+      <div class="disease-icon" style="background:#fce4ec;">🐛</div>
+      <div class="disease-name">Fruit & Shoot Borer</div>
+      <div class="disease-cause">Leucinodes orbonalis</div>
+      <div class="disease-symptom">Bored holes in shoots and fruits, causing significant post-harvest losses.</div>
+    </div>
+    <div class="disease-card healthy">
+      <div class="disease-icon" style="background:rgba(76,175,80,0.15);">✅</div>
+      <div class="disease-name">Healthy Plant</div>
+      <div class="disease-cause">No disease detected</div>
+      <div class="disease-symptom">Your crop looks healthy! Continue regular monitoring and preventive care.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="section-tag">How It Works</div>
+  <h2>Simple as taking a photo.</h2>
+  <p class="section-sub">Designed for farmers with no technical background. No account, no downloads, no complicated steps.</p>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-icon">📱</div>
+      <div class="step-title">Open the app</div>
+      <div class="step-desc">Open Yieldy in your phone's browser — no app store download required. Works on any Android.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-icon">📸</div>
+      <div class="step-title">Photograph your crop</div>
+      <div class="step-desc">Tap "Check My Crop" and take a clear photo of the affected leaf, fruit, or stem.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-icon">⚡</div>
+      <div class="step-title">AI analyzes it</div>
+      <div class="step-desc">Our EfficientNet model classifies the image against 5 disease classes in under 3 seconds.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-icon">💊</div>
+      <div class="step-title">Get your treatment plan</div>
+      <div class="step-desc">Receive the disease name, confidence score, and step-by-step treatment — in Filipino or Bisaya.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech-section" id="tech">
+  <div class="section-tag green">Technology</div>
+  <h2>Built for rural reality.</h2>
+  <p class="section-sub">Every technology choice prioritizes low-cost devices, offline capability, and Filipino farmers first.</p>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <div class="tech-layer">Frontend</div>
+      <div class="tech-name">React.js PWA</div>
+      <div class="tech-pill">Offline-capable</div>
+      <div class="tech-why">Installable on low-cost Android without app store. Works even with poor signal.</div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-layer">Backend</div>
+      <div class="tech-name">Python FastAPI</div>
+      <div class="tech-pill">Lightweight</div>
+      <div class="tech-why">Single /predict endpoint. Minimal overhead for fast response times on rural networks.</div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-layer">ML Model</div>
+      <div class="tech-name">EfficientNet-B0</div>
+      <div class="tech-pill">Transfer learning</div>
+      <div class="tech-why">Smaller and faster than custom CNN. High accuracy even with limited local training data.</div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-layer">Hosting</div>
+      <div class="tech-name">Railway / Render</div>
+      <div class="tech-pill">Free tier</div>
+      <div class="tech-why">No infrastructure cost during development and testing. Scales easily for production.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO SECTION -->
+<section class="demo-section" id="demo">
+  <div style="text-align:center;margin-bottom:3rem;">
+    <div class="section-tag green" style="display:inline-block;">Try It Now</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;letter-spacing:-1px;margin-top:0.75rem;">Upload a crop photo.</h2>
+    <p style="color:var(--dark-muted);font-size:1rem;line-height:1.7;max-width:480px;margin:0.75rem auto 0;">Experience Yieldy's disease detection. Upload any eggplant photo to see how it works.</p>
+  </div>
+
+  <div class="demo-container">
+    <div class="demo-label">Disease Check</div>
+    <div class="demo-title">I-upload ang litrato ng iyong tanim</div>
+
+    <div class="upload-box" id="upload-box">
+      <input type="file" id="file-input" accept="image/*" onchange="handleUpload(event)" />
+      <div class="upload-big-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      </div>
+      <div class="upload-box-text">I-tap para mag-upload ng larawan</div>
+      <div class="upload-box-sub">Supports JPG, PNG — any eggplant plant part</div>
+    </div>
+
+    <div id="preview-wrap">
+      <img id="preview-img" src="" alt="Uploaded crop photo" />
+    </div>
+
+    <div id="loading-bar"><div class="loading-fill"></div></div>
+
+    <button id="analyze-btn" onclick="analyzeDemo()">Suriin ang Tanim →</button>
+
+    <div class="result-box" id="result-box">
+      <div class="result-title-row">
+        <div class="result-disease" id="result-disease">Phomopsis Blight</div>
+        <div class="result-conf-badge" id="result-conf">87% confident</div>
+      </div>
+      <div class="result-recs" id="result-recs">
+        <strong>Immediate action:</strong> Remove and destroy infected plant parts. Avoid overhead irrigation.<br>
+        <strong>Treatment:</strong> Apply copper-based fungicide every 7–10 days.<br>
+        <strong>Prevention:</strong> Use certified disease-free seeds. Improve air circulation between plants.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="section-tag green">Our Team</div>
+  <h2>Built by Filipino students,<br/>for Filipino farmers.</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">BDC</div>
+      <div class="team-name">Brent Dela Cruz</div>
+      <div class="team-role">Developer</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">ETR</div>
+      <div class="team-name">Ethan Tyler Razalan</div>
+      <div class="team-role">Developer</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">GJU</div>
+      <div class="team-name">Gabriel John Uy</div>
+      <div class="team-role">Developer</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to protect your harvest?</h2>
+  <p>Join farmers across the Philippines using Yieldy to detect disease before it spreads — completely free.</p>
+  <div class="cta-btns">
+    <a href="#demo" class="btn-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      Subukan Ngayon — Libre
+    </a>
+    <a href="#how" class="btn-cta-outline">Alamin Kung Paano →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Yield<span>y</span></div>
+  <p>© 2024 Yieldy. Built for Filipino smallholder farmers.</p>
+  <p style="font-size:0.78rem;">Brent Dela Cruz · Ethan Tyler Razalan · Gabriel John Uy</p>
+</footer>
+
+<script>
+  const DEMO_RESULTS = [
+    { disease: "Phomopsis Blight", conf: "87% confident", color: "#e74c3c",
+      recs: "<strong>Immediate action:</strong> Remove and destroy infected plant parts. Avoid overhead irrigation.<br><strong>Treatment:</strong> Apply copper-based fungicide every 7–10 days.<br><strong>Prevention:</strong> Use certified disease-free seeds and improve air circulation." },
+    { disease: "Bacterial Wilt", conf: "91% confident", color: "#e74c3c",
+      recs: "<strong>Immediate action:</strong> Uproot and remove infected plants — do not compost.<br><strong>Treatment:</strong> No cure exists; remove plants quickly to prevent spread.<br><strong>Prevention:</strong> Rotate crops and avoid waterlogged soil." },
+    { disease: "Cercospora Leaf Spot", conf: "78% confident", color: "#e67e22",
+      recs: "<strong>Immediate action:</strong> Remove heavily spotted leaves immediately.<br><strong>Treatment:</strong> Spray with mancozeb or chlorothalonil fungicide.<br><strong>Prevention:</strong> Avoid water splashing on leaves; water at base only." },
+    { disease: "Fruit & Shoot Borer", conf: "83% confident", color: "#8e44ad",
+      recs: "<strong>Immediate action:</strong> Cut and destroy wilted shoots and infested fruits.<br><strong>Treatment:</strong> Apply spinosad or cypermethrin insecticide.<br><strong>Prevention:</strong> Install pheromone traps; use neem-based sprays preventively." },
+    { disease: "Healthy Plant ✓", conf: "95% confident", color: "#4CAF50",
+      recs: "<strong>Good news:</strong> No disease detected in this photo!<br><strong>Continue:</strong> Maintain regular watering and fertilization schedule.<br><strong>Monitor:</strong> Check plants every 3–5 days during wet season." }
+  ];
+
+  function handleUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      document.getElementById('preview-img').src = e.target.result;
+      document.getElementById('preview-wrap').style.display = 'block';
+      document.getElementById('analyze-btn').style.display = 'block';
+      document.getElementById('result-box').style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function analyzeDemo() {
+    const btn = document.getElementById('analyze-btn');
+    btn.style.display = 'none';
+    const loadingBar = document.getElementById('loading-bar');
+    loadingBar.style.display = 'block';
+    loadingBar.innerHTML = '<div class="loading-fill"></div>';
+
+    setTimeout(() => {
+      loadingBar.style.display = 'none';
+      const r = DEMO_RESULTS[Math.floor(Math.random() * DEMO_RESULTS.length)];
+      const resultBox = document.getElementById('result-box');
+      document.getElementById('result-disease').textContent = r.disease;
+      document.getElementById('result-conf').textContent = r.conf;
+      document.getElementById('result-conf').style.background = r.color;
+      document.getElementById('result-recs').innerHTML = r.recs;
+      resultBox.style.display = 'block';
+      resultBox.style.borderLeftColor = r.color;
+      btn.textContent = 'Subukan muli →';
+      btn.style.display = 'block';
+      btn.onclick = () => {
+        document.getElementById('result-box').style.display = 'none';
+        document.getElementById('preview-wrap').style.display = 'none';
+        document.getElementById('file-input').value = '';
+        btn.style.display = 'none';
+        btn.textContent = 'Suriin ang Tanim →';
+        btn.onclick = analyzeDemo;
+      };
+    }, 2000);
+  }
+</script>
+</body>
+</html>
