@@ -2,7 +2,6 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import time
-import os
 
 # PAGE CONFIG
 
@@ -105,11 +104,15 @@ DISEASE_INFO = {
     },
 }
 
-CLASS_NAMES = list(DISEASE_INFO.keys())
+with open("model/labels.txt", "r") as f:
+    CLASS_NAMES = [line.split(" ", 1)[1] for line in f.read().splitlines()]
 
 # MODEL LOADER
 @st.cache_resource
 def load_model():
+    import tensorflow.keras as keras
+    model = keras.models.load_model("model/keras_model.h5")
+    return model
     """
     Load the EfficientNet-B0 model.
 
@@ -139,39 +142,24 @@ def load_model():
 
 
 def predict(image: Image.Image, model):
-    """
-    Run inference on a PIL image.
-    Returns: (class_name: str, confidence: float, all_scores: dict)
-    """
-    if model is None:
-        # MOCK MODE 
-        img_array = np.array(image.resize((224, 224))).astype(np.float32)
-        seed = int(img_array.mean() * 100) % 2147483647
-        rng = np.random.default_rng(seed)
-        raw_scores = rng.dirichlet(np.ones(5) * 0.5)
-        top_idx = int(np.argmax(raw_scores))
-        raw_scores[top_idx] = raw_scores[top_idx] * 3
-        raw_scores = raw_scores / raw_scores.sum()
-        # End of Mock
-    else:
-        import torch
-        from torchvision import transforms
+    import numpy as np
 
-        transform = transforms.Compose([
-            transforms.Resize((224, 224)),
-            transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                 std=[0.229, 0.224, 0.225]),
-        ])
-        tensor = transform(image.convert("RGB")).unsqueeze(0)
-        with torch.no_grad():
-            logits = model(tensor)
-            raw_scores = torch.softmax(logits, dim=1).squeeze().numpy()
+    # Preprocess (Teachable Machine standard)
+    image = image.resize((224, 224))
+    img_array = np.asarray(image)
+    img_array = img_array / 255.0
+    img_array = np.expand_dims(img_array, axis=0)
 
-    predicted_idx = int(np.argmax(raw_scores))
-    predicted_class = CLASS_NAMES[predicted_idx]
-    confidence = float(raw_scores[predicted_idx])
-    all_scores = {CLASS_NAMES[i]: float(raw_scores[i]) for i in range(len(CLASS_NAMES))}
+    # Predict
+    prediction = model.predict(img_array)
+    index = int(np.argmax(prediction))
+
+    predicted_class = CLASS_NAMES[index]
+    confidence = float(prediction[0][index])
+    all_scores = {
+        CLASS_NAMES[i]: float(prediction[0][i])
+        for i in range(len(CLASS_NAMES))
+    }
 
     return predicted_class, confidence, all_scores
 
