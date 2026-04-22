@@ -1,0 +1,6 @@
+0 Eggplant Healthy Leaf
+1 Eggplant Insect Pest Disease
+2 Eggplant Leaf Spot Disease
+3 Eggplant Mosaic Virus Disease
+4 Eggplant Small Leaf Disease
+5 Eggplant Wilt Disease
