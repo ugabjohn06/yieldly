@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import time
+import os
 
 # PAGE CONFIG
 
@@ -232,7 +233,7 @@ def main():
                 progress.progress(i)
 
             predicted_class, confidence, all_scores = predict(image, model)
-            info = DISEASE_INFO[predicted_class]
+            info = DISEASE_INFO.get(predicted_class, DISEASE_INFO["Healthy Plant"])
             conf_color = confidence_color(confidence)
 
             progress.empty()
@@ -281,7 +282,16 @@ def main():
 
         st.divider()
 
-        # Confidence breakdown chart
+        # Confidence feedback (ALWAYS runs after prediction)
+        if confidence < 0.75:
+            st.warning("⚠️ Low confidence. Try another image.")
+
+        if predicted_class != "Healthy Plant" and confidence < 0.85:
+            st.info("This might still be a healthy plant. Please verify.")
+
+        if predicted_class == "Healthy Plant" and confidence < 0.80:
+            st.info("Leaf appears healthy, but confidence is moderate. Monitor regularly.")
+            
         st.markdown("#### 📊 Confidence Breakdown (All Classes)")
         scores_sorted = dict(sorted(all_scores.items(), key=lambda x: x[1], reverse=True))
 
