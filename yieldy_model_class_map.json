@@ -1,0 +1,28 @@
+{
+  "class_to_idx": {
+    "Eggplant Healthy Leaf": 0,
+    "Eggplant Insect Pest Disease": 1,
+    "Eggplant Leaf Spot Disease": 2,
+    "Eggplant Mosaic Virus Disease": 3,
+    "Eggplant Small Leaf Disease": 4,
+    "Eggplant Wilt Disease": 5,
+    "Eggplant Healthy Fruit": 6,
+    "Eggplant Fruit Creaking": 7,
+    "Eggplant Phomopsis Blight": 8,
+    "Eggplant Shoot and Fruit Borer": 9,
+    "Eggplant Wet Rot": 10
+  },
+  "idx_to_class": {
+    "0": "Eggplant Healthy Leaf",
+    "1": "Eggplant Insect Pest Disease",
+    "2": "Eggplant Leaf Spot Disease",
+    "3": "Eggplant Mosaic Virus Disease",
+    "4": "Eggplant Small Leaf Disease",
+    "5": "Eggplant Wilt Disease",
+    "6": "Eggplant Healthy Fruit",
+    "7": "Eggplant Fruit Creaking",
+    "8": "Eggplant Phomopsis Blight",
+    "9": "Eggplant Shoot and Fruit Borer",
+    "10": "Eggplant Wet Rot"
+  }
+}
